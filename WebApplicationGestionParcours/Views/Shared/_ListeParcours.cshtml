@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebApplicationGestionParcours.Models.Parcours>
+
+@foreach (var item in Model)
+{
+    <li>
+        <a href="#" class="btn btn-default dropdown-toggle"
+           data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">
+            @item.Nom
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            @Html.Action("Modules", "Modules", new { id = item.Id })
+        </ul>
+    </li>
+}
+

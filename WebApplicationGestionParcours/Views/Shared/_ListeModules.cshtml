@@ -1,0 +1,9 @@
+﻿@model IEnumerable<WebApplicationGestionParcours.Models.Module>
+<!--Razor-->
+@foreach (var item in Model)
+{
+    <li>
+        @Html.ActionLink(item.Libelle, "Details", "Modules", new { id = item.Id })
+    </li>
+
+}

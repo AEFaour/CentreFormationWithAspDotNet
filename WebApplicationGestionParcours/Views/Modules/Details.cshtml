@@ -1,0 +1,67 @@
+﻿@model WebApplicationGestionParcours.Models.Module
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Module</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoteActuelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoteActuelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDerniereEval)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDerniereEval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.infos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.infos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parcours.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parcours.Nom)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
