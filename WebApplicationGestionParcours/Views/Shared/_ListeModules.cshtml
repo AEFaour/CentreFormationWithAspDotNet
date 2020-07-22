@@ -3,7 +3,8 @@
 @foreach (var item in Model)
 {
     <li>
-        @Html.ActionLink(item.Libelle, "Details", "Modules", new { id = item.Id })
+        @Html.ActionLink(item.Libelle, "Details", "Modules",
+       new { id = item.Id }, new { @class = "text-danger" })
     </li>
 
 }

@@ -1,0 +1,48 @@
+﻿@using GridMvc.Html
+
+@model IEnumerable<WebApplicationGestionParcours.Models.Parcours>
+
+@{
+    ViewBag.Title = "ListeGridMVC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListeGridMVC</h2>
+
+@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(p => p.Id).Filterable(true).Titled("Numéro");
+    columns.Add(p => p.Nom).Sortable(true);
+    columns.Add(p => p.Slogan).Filterable(true);
+    columns.Add(p => p.Logo).Sortable(true).Filterable(true);
+    columns.Add()
+    .Sanitized(false)
+    .Encoded(false)
+    .RenderValueAs(x => Html.ActionLink("Edit", "Edit", new { id = x.Id }));
+    columns.Add()
+    .Sanitized(false)
+    .Encoded(false)
+    .RenderValueAs(x => "<button class='btn btn-default btn-delete-parcours' data-id='" + x.Id + "'> <span class='glyphicon glyphicon-trash'></span></button>");
+}
+).WithPaging(5)
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.btn-delete-parcours').click(function (event) {
+                var boutonClique = $(event.target).closest('button');
+                var idASupprimer = $(boutonClique).attr('data-id');
+
+                $.ajax({
+                    url: '@Url.Action("Supprimer")',
+                    type: 'POST',
+                    data: { id: idASupprimer }
+                });
+            });
+        });
+
+    </script>
+}
+
+
+
+

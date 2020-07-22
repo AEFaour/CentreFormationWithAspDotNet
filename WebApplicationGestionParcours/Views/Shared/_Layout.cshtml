@@ -35,9 +35,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
-                    <li>@Html.ActionLink("À propos de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Parcours", "Index", "Parcours")</li>
+                    <li>@Html.ActionLink("Modules", "Index", "Modules")</li>
+                    <li>@Html.ActionLink("Evaluations", "Index", "EvaluationModules")</li>
 
                     <!-- drop down box pour la liste des parcours -->
                     <!--On veux des dropdown liste dynamique-->
@@ -57,6 +57,9 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <!--Mettre le GridMVC dans un bundle pour simplifier son utilisation-->
+
+    @Scripts.Render("~/bundles/gridmvc")
     @RenderSection("scripts", required: false)
 </body>
 </html>

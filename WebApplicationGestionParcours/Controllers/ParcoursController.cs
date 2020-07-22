@@ -15,6 +15,11 @@ namespace WebApplicationGestionParcours.Controllers
     {
         private DBGestionParcoursEntities db = new DBGestionParcoursEntities();
 
+        public ActionResult Supprimer(int id)
+        {
+            return null;
+        }
+
         public ActionResult Parcours()
         {
             // Passer les 3 parcours phares
@@ -22,6 +27,10 @@ namespace WebApplicationGestionParcours.Controllers
         }
         // GET: Parcours
         public async Task<ActionResult> Index()
+        {
+            return View(await db.Parcours.ToListAsync());
+        }
+        public async Task<ActionResult> ListeGridMVC()
         {
             return View(await db.Parcours.ToListAsync());
         }
