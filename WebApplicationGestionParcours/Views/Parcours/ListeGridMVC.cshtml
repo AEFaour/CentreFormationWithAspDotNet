@@ -35,7 +35,15 @@
                 $.ajax({
                     url: '@Url.Action("Supprimer")',
                     type: 'POST',
-                    data: { id: idASupprimer }
+                    data: { id: idASupprimer },
+                    success: function (data) {
+                        if (data.Suppression == "Ok") {
+
+                            $(boutonClique).closest("tr").fadeOut(400, function () {
+                                $(this).remove();
+                            })
+                        }
+                    }
                 });
             });
         });

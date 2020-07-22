@@ -15,9 +15,19 @@ namespace WebApplicationGestionParcours.Controllers
     {
         private DBGestionParcoursEntities db = new DBGestionParcoursEntities();
 
-        public ActionResult Supprimer(int id)
+        [HttpPost]
+        public JsonResult Supprimer(int id)
         {
-            return null;
+            Parcours parcoursASupp = db.Parcours.SingleOrDefault(p => p.Id == id);
+            if (parcoursASupp.Module.Count > 0)
+            {
+                return Json(new { Suppression = "Non" });
+            }
+
+            db.Parcours.Remove(parcoursASupp);
+            db.SaveChanges();
+
+            return Json(new { Suppression = "Ok" });
         }
 
         public ActionResult Parcours()
