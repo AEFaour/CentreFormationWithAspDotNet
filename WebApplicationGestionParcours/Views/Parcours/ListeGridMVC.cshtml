@@ -23,6 +23,10 @@
     .Sanitized(false)
     .Encoded(false)
     .RenderValueAs(x => "<button class='btn btn-default btn-delete-parcours' data-id='" + x.Id + "'> <span class='glyphicon glyphicon-trash'></span></button>");
+    columns.Add()
+    .Sanitized(false)
+    .Encoded(false)
+    .RenderValueAs(x => "<button class='btn btn-default btn-details-parcours' data-id='" + x.Id + "'> <span class='glyphicon glyphicon-list'></span></button>");
 }
 ).WithPaging(5)
 @section Scripts {
@@ -41,9 +45,25 @@
 
                             $(boutonClique).closest("tr").fadeOut(400, function () {
                                 $(this).remove();
-                            })
-                        }
+                            });
+
+                        };
+
+                        if (data.Suppression == "Non") {
+                            alert("Suppression impossible");
+                        };
                     }
+                });
+            });
+
+            $('.btn-details-parcours').click(function (event) {
+                var boutonDetClique = $(event.target).closest('button');
+                var idADetailler = $(boutonDetClique).attr('data-id');
+
+                $.ajax({
+                    url: '@Url.Action("Details")',
+                    type: 'GET',
+                    data: { id: idADetailler }
                 });
             });
         });

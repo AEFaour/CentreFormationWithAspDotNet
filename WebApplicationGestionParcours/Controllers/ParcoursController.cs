@@ -19,7 +19,7 @@ namespace WebApplicationGestionParcours.Controllers
         public JsonResult Supprimer(int id)
         {
             Parcours parcoursASupp = db.Parcours.SingleOrDefault(p => p.Id == id);
-            if (parcoursASupp.Module.Count > 0)
+            if (parcoursASupp.Module.ToList().Count > 0)
             {
                 return Json(new { Suppression = "Non" });
             }
