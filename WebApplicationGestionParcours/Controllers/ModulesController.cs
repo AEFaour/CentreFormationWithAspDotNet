@@ -8,12 +8,25 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplicationGestionParcours.Models;
+using AutoMapper;
 
 namespace WebApplicationGestionParcours.Controllers
 {
     public class ModulesController : Controller
     {
         private DBGestionParcoursEntities db = new DBGestionParcoursEntities();
+
+        [HttpPost]
+        public JsonResult Supprimer(int id)
+        {
+            Module moduleASupp = db.Module.SingleOrDefault(p => p.Id == id);
+
+            db.Module.Remove(moduleASupp);
+            db.SaveChanges();
+
+            return Json(new { Suppression = "Ok" });
+        }
+
 
         public ActionResult Modules(int id)
         {
@@ -26,6 +39,11 @@ namespace WebApplicationGestionParcours.Controllers
         {
             var module = db.Module.Include(m => m.Parcours);
             return View(await module.ToListAsync());
+        }
+
+        public async Task<ActionResult> ListeGridMVC()
+        {
+            return View(await db.Module.ToListAsync());
         }
 
         // GET: Modules/Details/5
@@ -43,6 +61,12 @@ namespace WebApplicationGestionParcours.Controllers
             return View(module);
         }
 
+        public bool AreInfosNotRepeate(string infos)
+        {
+            var _result = (db.Module.Where(x => x.infos.Contains(infos))).ToList(); // 
+
+            return (_result.Count > 0);
+        }
         // GET: Modules/Create
         public ActionResult Create()
         {
@@ -55,8 +79,18 @@ namespace WebApplicationGestionParcours.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,idParcours,Libelle,NoteActuelle,DateDerniereEval,Logo,infos")] Module module)
+        public async Task<ActionResult> Create([Bind(Include = "Id,idParcours,Libelle,NoteActuelle,DateDerniereEval,Logo,infos")] ModuleMVC moduleMVC)
         {
+            Module module = new Module();
+
+            //Créer une configuration de Mapper --cas de Mappage avec classe source et dest
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ModuleMVC, Module>());
+
+            //Créer un Mapper en lui passant en param la config crée
+            var mapper = new Mapper(config);
+            // faire  l'affectation
+
+            module = mapper.Map<Module>(moduleMVC);
             if (ModelState.IsValid)
             {
                 db.Module.Add(module);
@@ -65,7 +99,7 @@ namespace WebApplicationGestionParcours.Controllers
             }
 
             ViewBag.idParcours = new SelectList(db.Parcours, "Id", "Nom", module.idParcours);
-            return View(module);
+            return View(moduleMVC);
         }
 
         // GET: Modules/Edit/5
@@ -81,7 +115,11 @@ namespace WebApplicationGestionParcours.Controllers
                 return HttpNotFound();
             }
             ViewBag.idParcours = new SelectList(db.Parcours, "Id", "Nom", module.idParcours);
-            return View(module);
+            ModuleMVC moduleMVC = new ModuleMVC();
+            var config = new MapperConfiguration(x => x.CreateMap<Module, ModuleMVC>());
+            var mapper = new Mapper(config);
+            moduleMVC = mapper.Map<ModuleMVC>(module);
+            return View(moduleMVC);
         }
 
         // POST: Modules/Edit/5
@@ -89,8 +127,13 @@ namespace WebApplicationGestionParcours.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,idParcours,Libelle,NoteActuelle,DateDerniereEval,Logo,infos")] Module module)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,idParcours,Libelle,NoteActuelle,DateDerniereEval,Logo,infos")] ModuleMVC moduleMVC)
         {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ModuleMVC, Module>());
+            var mapper = new Mapper(config);
+
+            Module module = new Module();
+            module = mapper.Map<Module>(moduleMVC);
             if (ModelState.IsValid)
             {
                 db.Entry(module).State = EntityState.Modified;
@@ -98,7 +141,7 @@ namespace WebApplicationGestionParcours.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.idParcours = new SelectList(db.Parcours, "Id", "Nom", module.idParcours);
-            return View(module);
+            return View(moduleMVC);
         }
 
         // GET: Modules/Delete/5

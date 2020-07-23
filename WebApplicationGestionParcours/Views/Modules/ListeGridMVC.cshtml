@@ -1,0 +1,67 @@
+﻿@using GridMvc.Html
+@model IEnumerable<WebApplicationGestionParcours.Models.Module>
+@{
+    ViewBag.Title = "ListeGridMVC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListeGridMVC</h2>
+
+@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(m => m.Id).Filterable(true).Titled("Numéro");
+    columns.Add(m => m.Libelle).Sortable(true);
+    columns.Add(m => m.infos).Filterable(true);
+    columns.Add(m => m.NoteActuelle).Filterable(true);
+    columns.Add(m => m.DateDerniereEval).Filterable(true);
+    columns.Add(m => m.Parcours.Nom).Filterable(true);
+    columns.Add(m => m.Logo).Sortable(true).Filterable(true);
+    columns.Add()
+    .Sanitized(false)
+    .Encoded(false)
+    .RenderValueAs(x => Html.ActionLink("Edit", "Edit", new { id = x.Id }));
+    columns.Add()
+   .Sanitized(false)
+   .Encoded(false)
+   .RenderValueAs(x => "<button class='btn btn-default btn-delete-parcours' data-id='" + x.Id + "'> <span class='glyphicon glyphicon-trash'></span></button>");
+    columns.Add()
+    .Sanitized(false)
+    .Encoded(false)
+    .RenderValueAs(x => "<button class='btn btn-default btn-details-parcours' data-id='" + x.Id + "'> <span class='glyphicon glyphicon-list'></span></button>");
+
+}).WithPaging(3)
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.btn-delete-parcours').click(function (event) {
+                var boutonClique = $(event.target).closest('button');
+                var idASupprimer = $(boutonClique).attr('data-id');
+
+                $.ajax({
+                    url: '@Url.Action("Supprimer")',
+                    type: 'POST',
+                    data: { id: idASupprimer },
+                    success: function (data) {
+                        if (data.Suppression == "Ok") {
+
+                            $(boutonClique).closest("tr").fadeOut(400, function () {
+                                $(this).remove();
+                            });
+
+                        };
+                    }
+                });
+            });
+
+            $('.btn-details-parcours').click(function (event) {
+                var boutonDetClique = $(event.target).closest('button');
+                var idADetailler = $(boutonDetClique).attr('data-id');
+                location.href = '/Parcours/Details/' + idADetailler;
+
+            });
+        });
+
+    </script>
+}
+
