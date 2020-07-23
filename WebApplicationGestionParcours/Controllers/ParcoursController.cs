@@ -61,6 +61,13 @@ namespace WebApplicationGestionParcours.Controllers
             return View(parcours);
         }
 
+        public bool IsSloganUnique(string slogan)
+        {
+            var _result = (db.Parcours.Where(x => x.Slogan.Contains(slogan))).ToList(); // 
+
+            return (_result.Count > 0);
+        }
+
         // GET: Parcours/Create
         public ActionResult Create()
         {

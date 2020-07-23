@@ -34,7 +34,9 @@
                 @Html.DisplayFor(modelItem => item.Slogan)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Logo)
+                @*@Html.DisplayFor(modelItem => item.Logo)*@
+                <img src="@Url.Content(item.Logo)" width="60" height="60" alt="Parcours " />
+
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

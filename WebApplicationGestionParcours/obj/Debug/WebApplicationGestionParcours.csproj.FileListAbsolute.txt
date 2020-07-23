@@ -1,4 +1,3 @@
-C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\Logos\education-logo.jpg
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\WebApplicationGestionParcours.dll.config
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\WebApplicationGestionParcours.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\WebApplicationGestionParcours.pdb
@@ -70,8 +69,8 @@ C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGes
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\fr\System.Web.WebPages.resources.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\fr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\fr\System.Web.WebPages.Razor.resources.dll
-C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.csprojAssemblyReference.cache
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.csproj.CoreCompileInputs.cache
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.csproj.CopyComplete
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.pdb
+C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.csprojAssemblyReference.cache

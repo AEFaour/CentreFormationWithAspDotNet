@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using WebApplicationGestionParcours.Controllers;
 
 namespace WebApplicationGestionParcours.Models
 {
-    public class ParcoursMVC
+    public class ParcoursMVC : IValidatableObject
+    //IValidatatableObject pour des validations complexe côté server
     {
         public int Id { get; set; }
 
@@ -26,5 +28,26 @@ namespace WebApplicationGestionParcours.Models
         public string Logo { get; set; }
 
         public virtual ICollection<Module> Module { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var ValidationResult = new List<ValidationResult>();
+            // Un slogan ne peut pas commencer par la lettre "A"
+
+            if (Slogan.StartsWith("A") || SloganUnique(Slogan))
+            {
+                var erreur = new ValidationResult("Le slogan ne peut pas commencer par la lettre 'A'" +
+                    " ou ne peut pas faire partie d'un autre slogan déjà utilisé",
+                    new List<String> { "Slogan" });
+
+                ValidationResult.Add(erreur);
+            }
+
+            return ValidationResult;
+        }
+        private bool SloganUnique(string slogan)
+        {
+            return (new ParcoursController()).IsSloganUnique(slogan);
+        }
     }
 }
