@@ -94,7 +94,7 @@ namespace WebApplicationGestionParcours.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(parcours);
+            return View(parcoursMVC);
         }
 
         // GET: Parcours/Edit/5
@@ -109,7 +109,12 @@ namespace WebApplicationGestionParcours.Controllers
             {
                 return HttpNotFound();
             }
-            return View(parcours);
+            // Envoyer un parcoursMVC
+            ParcoursMVC parcoursMVC = new ParcoursMVC();
+            var config = new MapperConfiguration(x => x.CreateMap<Parcours, ParcoursMVC>());
+            var mapper = new Mapper(config);
+            parcoursMVC = mapper.Map<ParcoursMVC>(parcours);
+            return View(parcoursMVC);
         }
 
         // POST: Parcours/Edit/5
@@ -117,15 +122,21 @@ namespace WebApplicationGestionParcours.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Nom,Slogan,Logo")] Parcours parcours)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Nom,Slogan,Logo")] ParcoursMVC parcoursMVC)
         {
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ParcoursMVC, Parcours>());
+            var mapper = new Mapper(config);
+
+            Parcours parcours = new Parcours();
+            parcours = mapper.Map<Parcours>(parcoursMVC);
             if (ModelState.IsValid)
             {
                 db.Entry(parcours).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(parcours);
+            return View(parcoursMVC);
         }
 
         // GET: Parcours/Delete/5
