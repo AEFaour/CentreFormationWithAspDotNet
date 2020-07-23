@@ -56,10 +56,12 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
     @Scripts.Render("~/bundles/bootstrap")
     <!--Mettre le GridMVC dans un bundle pour simplifier son utilisation-->
-
     @Scripts.Render("~/bundles/gridmvc")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

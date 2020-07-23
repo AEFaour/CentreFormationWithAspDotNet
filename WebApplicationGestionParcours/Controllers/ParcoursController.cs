@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplicationGestionParcours.Models;
+using AutoMapper;
 
 namespace WebApplicationGestionParcours.Controllers
 {
@@ -71,10 +72,21 @@ namespace WebApplicationGestionParcours.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Nom,Slogan,Logo")] Parcours parcours)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Nom,Slogan,Logo")] ParcoursMVC parcoursMVC)
         {
+            Parcours parcours = new Parcours();
+
+            //Créer une configuration de Mapper --cas de Mappage avec classe source et dest
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ParcoursMVC, Parcours>());
+
+            //Créer un Mapper en lui passant en param la config crée
+            var mapper = new Mapper(config);
+
+            // C'est qui la reflexion?
             if (ModelState.IsValid)
             {
+                // Affecter parcoursMVC dans parcours et pour cela on utilise AutoMapper
+                // parcours.Nom = parcoursMVC.Nom; // 
                 db.Parcours.Add(parcours);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
