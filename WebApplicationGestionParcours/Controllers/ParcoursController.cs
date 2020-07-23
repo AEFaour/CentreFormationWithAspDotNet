@@ -81,8 +81,10 @@ namespace WebApplicationGestionParcours.Controllers
 
             //Créer un Mapper en lui passant en param la config crée
             var mapper = new Mapper(config);
+            // faire  l'affectation
 
-            // C'est qui la reflexion?
+            parcours = mapper.Map<Parcours>(parcoursMVC);
+
             if (ModelState.IsValid)
             {
                 // Affecter parcoursMVC dans parcours et pour cela on utilise AutoMapper
