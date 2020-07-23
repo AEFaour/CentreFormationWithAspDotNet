@@ -59,12 +59,9 @@
             $('.btn-details-parcours').click(function (event) {
                 var boutonDetClique = $(event.target).closest('button');
                 var idADetailler = $(boutonDetClique).attr('data-id');
+                location.href = '/Parcours/Details/' + idADetailler;
 
-                $.ajax({
-                    url: '@Url.Action("Details")',
-                    type: 'GET',
-                    data: { id: idADetailler }
-                });
+
             });
         });
 
