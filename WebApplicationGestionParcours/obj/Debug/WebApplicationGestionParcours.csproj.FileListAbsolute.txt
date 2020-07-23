@@ -33,6 +33,7 @@ C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGes
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\roslyn\VBCSCompiler.exe
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\Antlr3.Runtime.dll
+C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\AutoMapper.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\EntityFramework.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\EntityFramework.SqlServer.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\GridMvc.dll
@@ -47,6 +48,7 @@ C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGes
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\System.Web.WebPages.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\System.Web.WebPages.Razor.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\WebGrease.dll
+C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\AutoMapper.xml
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\EntityFramework.xml
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\EntityFramework.SqlServer.xml
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
@@ -68,10 +70,8 @@ C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGes
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\fr\System.Web.WebPages.resources.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\fr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\fr\System.Web.WebPages.Razor.resources.dll
+C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.csprojAssemblyReference.cache
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.csproj.CoreCompileInputs.cache
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.csproj.CopyComplete
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.pdb
-C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\obj\Debug\WebApplicationGestionParcours.csprojAssemblyReference.cache
-C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\AutoMapper.dll
-C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\WebApplicationGestionParcours\bin\AutoMapper.xml
