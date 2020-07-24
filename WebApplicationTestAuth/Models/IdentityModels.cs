@@ -21,7 +21,7 @@ namespace WebApplicationTestAuth.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("ConnectionBaseAbonne", throwIfV1Schema: false)
         {
         }
 

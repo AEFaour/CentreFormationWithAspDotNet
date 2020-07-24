@@ -1,5 +1,6 @@
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ClassLibraryGeometrie\bin\Debug\ClassLibraryGeometrie.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ClassLibraryGeometrie\bin\Debug\ClassLibraryGeometrie.pdb
+C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ClassLibraryGeometrie\obj\Debug\ClassLibraryGeometrie.csprojAssemblyReference.cache
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ClassLibraryGeometrie\obj\Debug\ClassLibraryGeometrie.csproj.CoreCompileInputs.cache
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ClassLibraryGeometrie\obj\Debug\ClassLibraryGeometrie.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ClassLibraryGeometrie\obj\Debug\ClassLibraryGeometrie.pdb

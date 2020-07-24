@@ -1,6 +1,7 @@
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ConsoleAppCalcul\bin\Debug\ConsoleAppCalcul.exe.config
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ConsoleAppCalcul\bin\Debug\ConsoleAppCalcul.exe
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ConsoleAppCalcul\bin\Debug\ConsoleAppCalcul.pdb
+C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ConsoleAppCalcul\obj\Debug\ConsoleAppCalcul.csprojAssemblyReference.cache
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ConsoleAppCalcul\obj\Debug\ConsoleAppCalcul.csproj.CoreCompileInputs.cache
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ConsoleAppCalcul\obj\Debug\ConsoleAppCalcul.exe
 C:\Users\Anas FAOUR\source\repos\WebApplicationGestionParcours\ConsoleAppCalcul\obj\Debug\ConsoleAppCalcul.pdb
