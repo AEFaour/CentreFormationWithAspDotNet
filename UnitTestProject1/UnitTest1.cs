@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 using ClassLibraryGeometrie;
 using ConsoleAppCalcul;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WebApplicationGestionParcours.Controllers;
+using WebApplicationGestionParcours.Models;
 
 namespace UnitTestProject1
 {
@@ -23,7 +27,7 @@ namespace UnitTestProject1
             // Assert (Execution & test)
 
             //Assert.AreEqual(9, calcul.Addition(4, 5), "4 + 5 ne font plus 9, Supprenant... ");
-            Assert.AreEqual(8, k, "4 + 5  est bien 8 ");
+            Assert.AreEqual(9, k, "4 + 5  est bien 8 ");
 
             ;
 
@@ -60,6 +64,29 @@ namespace UnitTestProject1
             // 3 - Package MVC
             // 4 - Acces au projet
 
+            //Acte 
+
+            // 1 - instancier le controller à tester
+            var _controller = new ParcoursController();
+
+            // On exscuter l'action edit qui retourne une View de type ActionResult
+            //TaskActionResult>
+
+            //var _result = (Task<ActionResult>) _controller.Edit(2);
+            var _result = _controller.Edit(2) as Task<ActionResult>;
+
+            // Récupérer le viewrESULT
+
+            var _viewResult = _result.Result as ViewResult;
+
+            //utiliser le modle du controlller 
+
+            var _model = _viewResult.Model as ParcoursMVC;
+
+            //Assert
+            Assert.AreEqual(2, _model.Id, " Vous n'editez pas le bon parcours");
+
+            // Affectuer un test unitaire pour l'actio, detail du controller module
 
         }
     }
