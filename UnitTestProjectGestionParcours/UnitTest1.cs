@@ -20,17 +20,17 @@ namespace UnitTestProjectGestionParcours
 
             //Acte 
 
-            // 1 - instancier le controller à tester
-
+            //  instancier le controller à tester
+            int tested = 3;
             var _controller = new ModulesController();
 
-            var _result = _controller.Details(7);
+            var _result = _controller.Details(3);
 
             var _viewResult = _result.Result as ViewResult;
 
             var _model1 = _viewResult.Model as Module;
 
-            Assert.AreEqual(7, _model1.Id, " Votre module n'existe pas");
+            Assert.AreEqual(tested, _model1.Id, " Votre module n'existe pas");
         }
     }
 }
